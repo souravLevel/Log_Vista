@@ -48,7 +48,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.github.souravLevel'
-                artifactId = 'Log-Vista'
+                artifactId = 'Level_Log_Vista'
                 version = '1.0.0'
             }
         }
