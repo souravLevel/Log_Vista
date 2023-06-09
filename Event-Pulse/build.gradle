@@ -47,7 +47,7 @@ afterEvaluate {
             maven(MavenPublication) {
                 from components.release
 
-                groupId = 'com.github.SouravDev001'
+                groupId = 'com.github.souravLevel'
                 artifactId = 'Log-Vista'
                 version = '1.0.0'
             }
