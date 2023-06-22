@@ -1,6 +1,7 @@
 package log.vista
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,6 +30,10 @@ class MainActivity : ComponentActivity() {
         }
 
         EventLogix().simpleToast(this, "Hello from EventLogix!")
+
+        Handler().postDelayed({
+            EventLogix().callEvent(this, "Today Visited", "536c041b-0068-11ee-9f93-0ad32c43ca74")
+        }, 5000)
     }
 }
 

@@ -11,7 +11,7 @@ data class UserDataRequest(
 )
 
 data class AdditionalProperties(
-    val location: String,
+    val premium_user  :Boolean
 )
 
 data class CommonResponse(
