@@ -24,7 +24,7 @@ public class EventLogix {
 
     public fun callEvent(context: Context, eventName: String, uuid : String) {
 
-        val additionalProperties = AdditionalProperties(true)
+        val additionalProperties = AdditionalProperties("yes")
         val eventRequest = EventRequest(uuid, eventName, additionalProperties)
 
         val viewModel = ViewModelProvider(

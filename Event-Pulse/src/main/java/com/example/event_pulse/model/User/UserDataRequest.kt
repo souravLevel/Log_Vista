@@ -11,7 +11,7 @@ data class UserDataRequest(
 )
 
 data class AdditionalProperties(
-    val premium_user  :Boolean
+    val premium_user  :String
 )
 
 data class CommonResponse(
