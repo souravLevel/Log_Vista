@@ -29,11 +29,27 @@ class MainActivity : ComponentActivity() {
             }
         }
 
+        val uuid = "023e3840c25911eda879027e1f50607e"
         EventLogix().simpleToast(this, "Hello from EventLogix!")
 
         Handler().postDelayed({
-            EventLogix().callEvent(this, "Today Visited", "536c041b006811ee9f930ad32c43ca74")
-        }, 5000)
+            EventLogix().callEvent(this, "App Started", uuid)
+        }, 4000)
+        Handler().postDelayed({
+            EventLogix().callEvent(this, "Today Visited", uuid)
+        }, 6000)
+        Handler().postDelayed({
+            EventLogix().callEvent(this, "Mind Visited", uuid)
+        }, 8000)
+        Handler().postDelayed({
+            EventLogix().callEvent(this, "Meditation Details", uuid)
+        }, 10000)
+        Handler().postDelayed({
+            EventLogix().callEvent(this, "Meditation Started", uuid)
+        }, 12000)
+        Handler().postDelayed({
+            EventLogix().callEvent(this, "Meditation Feedback", uuid)
+        }, 14000)
     }
 }
 
