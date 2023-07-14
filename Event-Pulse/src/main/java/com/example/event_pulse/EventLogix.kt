@@ -7,6 +7,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
+import com.example.event_pulse.model.Event.EventDetails
 import com.example.event_pulse.model.Event.EventRequest
 import com.example.event_pulse.model.User.AdditionalProperties
 import com.example.event_pulse.retrofit.ApiHelper
@@ -22,10 +23,18 @@ public class EventLogix {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
-    public fun callEvent(context: Context, eventName: String, uuid : String) {
+    public fun callEvent(
+        context: Context,
+        eventName: String,
+        origin: String,
+        uuid: String,
+        did: String,
+        activityName: String,
+        activityUrl: String
+    ) {
 
-        val additionalProperties = AdditionalProperties("yes")
-        val eventRequest = EventRequest(uuid, eventName, additionalProperties)
+        val eventDetails = EventDetails(activityName, activityUrl)
+        val eventRequest = EventRequest(uuid, eventName, did, origin, eventDetails)
 
         val viewModel = ViewModelProvider(
             context as ViewModelStoreOwner,
@@ -52,4 +61,6 @@ public class EventLogix {
             }
         })
     }
+
+
 }
