@@ -1,7 +1,6 @@
 package log.vista
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,12 +28,48 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        val uuid = "023e3840c25911eda879027e1f50607e"
+//{
+//    "user_id": "8c36cdcf-5239-11ee-bb62-0ad32c43ca74",
+//    "from_where": "Today",
+//    "sub_section": "Trending",
+//    "activity_type": "Meditation",
+//    "purpose": "Start",
+//    "activity_id": 2,
+//    "activity_name":"Victorious Breath",
+//    "did": "8cdecab992ac3c8a",
+//    "activity_url": "https://v3.cdn.level.game/meditations/1692705443212_Andrei+Ujjayi+Breathing_03+%281%29.mp3"
+//}
+
+        val uuid = "8c36cdcf-5239-11ee-bb62-0ad32c43ca74"
         EventLogix().simpleToast(this, "Hello from EventLogix!")
 
+//        EventLogix().callEvent(
+//            this,
+//            uuid,
+//            "Today",
+//            "Trending",
+//            "Meditation",
+//            "Start",
+//            2,
+//            "Victorious Breath",
+//            "8cdecab992ac3c8a",
+//            "https://v3.cdn.level.game/meditations/1692705443212_Andrei+Ujjayi+Breathing_03+%281%29.mp3"
+//        )
+
 //        Handler().postDelayed({
-//            EventLogix().callEvent(this, "App Started", uuid)
-//        }, 4000)
+//            EventLogix().callEvent(
+//                this,
+//                uuid,
+//                "Today",
+//                "Trending",
+//                "Meditation",
+//                "Start",
+//                2,
+//                "Victorious Breath",
+//                "8cdecab992ac3c8a",
+//                "https://v3.cdn.level.game/meditations/1692705443212_Andrei+Ujjayi+Breathing_03+%281%29.mp3"
+//            )
+//        }, 10000)
 //        Handler().postDelayed({
 //            EventLogix().callEvent(this, "Today Visited", uuid)
 //        }, 6000)

@@ -1,15 +1,12 @@
 package com.example.event_pulse
 
-import android.app.Activity
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
-import com.example.event_pulse.model.Event.EventDetails
 import com.example.event_pulse.model.Event.EventRequest
-import com.example.event_pulse.model.User.AdditionalProperties
 import com.example.event_pulse.retrofit.ApiHelper
 import com.example.event_pulse.retrofit.RetrofitBuilder
 import com.example.event_pulse.retrofit.Status
@@ -25,16 +22,29 @@ public class EventLogix {
 
     public fun callEvent(
         context: Context,
-        eventName: String,
-        origin: String,
         uuid: String,
-        did: String,
+        fromWhere: String,
+        subSection: String,
+        activityType: String,
+        purpose: String,
+        activityId: Int,
         activityName: String,
+        deviceId: String,
         activityUrl: String
     ) {
 
-        val eventDetails = EventDetails(activityName, activityUrl)
-        val eventRequest = EventRequest(uuid, eventName, did, origin, eventDetails)
+        //val eventDetails = EventDetails(activityName, activityUrl)
+        val eventRequest = EventRequest(
+            uuid,
+            fromWhere,
+            subSection,
+            activityType,
+            purpose,
+            activityId,
+            activityName,
+            deviceId,
+            activityUrl
+        )
 
         val viewModel = ViewModelProvider(
             context as ViewModelStoreOwner,
@@ -46,7 +56,7 @@ public class EventLogix {
                 when (resource.status) {
                     Status.SUCCESS -> {
                         resource.data?.let { resBody ->
-                            simpleToast(context, "Success")
+                           // simpleToast(context, "Success")
                         }
                     }
 
